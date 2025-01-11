@@ -1,67 +1,115 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Projeto Laravel com FilamentPHP: Guia Completo
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Introdução
 
-## About Laravel
+Este projeto tem como objetivo criar um painel administrativo intuitivo, utilizaremos o Laravel como framework principal e o FilamentPHP para construir a interface de usuário.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Pré-requisitos
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* **Docker** e **Docker Compose:** Para rodar o ambiente de desenvolvimento isolado.
+* **PHP:** Versão 8.2 ou superior.
+* **Composer:** Para gerenciar as dependências do projeto.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Instalação
 
-## Learning Laravel
+### 1. Clone o repositório
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Clone este repositório para sua máquina local:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+git clone https://github.com/usuario/repositorio.git
+cd repositorio
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+###  2. Configuração do ambiente
+Este projeto utiliza o Docker com o Laravel Sail para configurar o ambiente de desenvolvimento. Execute o comando abaixo para iniciar os containers:
 
-## Laravel Sponsors
+```bash
+./vendor/bin/sail up -d
+```
+Isso iniciará os containers do Docker em segundo plano.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+###  3. Instale as dependências
+Depois que o Docker estiver rodando, instale as dependências do Composer:
 
-### Premium Partners
+```sh
+./vendor/bin/sail composer install
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+###  4. Configuração do ambiente
+Copie o arquivo de configuração .env.example para criar o seu próprio .env:
 
-## Contributing
+```sh
+cp .env.example .env
+```
+Agora, configure as variáveis de ambiente no arquivo .env conforme necessário (como banco de dados, chave de aplicativo, etc.).
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+###  5. Gerar a chave do aplicativo
+Gere a chave de criptografia para o Laravel:
 
-## Code of Conduct
+```sh
+./vendor/bin/sail artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+###  6. Migração do Banco de Dados
+Se o seu projeto usar um banco de dados, você pode rodar as migrações com:
 
-## Security Vulnerabilities
+```sh
+./vendor/bin/sail artisan migrate
+```
+###  7. Acessar o Aplicativo
+Agora, o aplicativo estará rodando dentro dos containers Docker. Você pode acessar o aplicativo no navegador utilizando:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+Copiar código
+http://localhost
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# fillament-app
+#### Pacotes Instalados
+Dependências principais:
+- FilamentPHP: filament/filament — Framework de administração para Laravel, com uma interface de usuário moderna e flexível.
+- Filament Breezy: jeffgreco13/filament-breezy — Pacote para autenticação e controle de usuários, com integração no Filament.
+- Laravel Framework: laravel/framework — Framework PHP robusto para o desenvolvimento de aplicações web.
+- Flysystem S3: league/flysystem-aws-s3-v3 — Sistema de arquivos para integração com o Amazon S3.
+#### Dependências de desenvolvimento:
+- Laravel Sail: laravel/sail — Ferramenta de desenvolvimento local utilizando Docker.
+- Laravel Debugbar: barryvdh/laravel-debugbar — Ferramenta para depuração da aplicação em desenvolvimento.
+- Captainhook: captainhook/captainhook — Sistema de hooks para automatizar tarefas no Git.
+- Faker: fakerphp/faker — Biblioteca para gerar dados falsos para testes e populações de banco de dados.
+- Pest: pestphp/pest — Framework de testes para Laravel, com uma sintaxe limpa e expressiva.
+- Mockery: mockery/mockery — Biblioteca para criação de mocks em testes unitários.
+
+### Usando o Docker e Sail
+Este projeto usa Docker e Sail para fornecer um ambiente de desenvolvimento isolado, garantindo que todos os desenvolvedores tenham o mesmo ambiente de execução.
+
+### Comandos úteis:
+Subir o ambiente:
+
+```bash
+./vendor/bin/sail up -d
+```
+Parar os containers:
+```bash
+./vendor/bin/sail down
+```
+
+Executar comandos Artisan dentro do container:
+```bash
+./vendor/bin/sail artisan <comando>
+```
+
+Acessar o shell do container:
+```bash
+./vendor/bin/sail shell
+```
+
+### Configuração do Docker
+> A configuração do Docker para o Laravel Sail está definida no arquivo docker-compose.yml e o arquivo > de configuração do .env define as variáveis necessárias para configurar os containers corretamente.
+
+### Contribuições
+> Se você quiser contribuir para este projeto, fique à vontade para abrir issues ou enviar pull requests. Certifique-se de que os testes estejam passando antes de enviar uma contribuição.
+
+
+## Licença
+
+Este projeto está licenciado sob a MIT License.
+**Free Software, By Alessandronuunes!**
