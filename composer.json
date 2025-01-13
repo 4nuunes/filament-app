@@ -16,8 +16,10 @@
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.14",
         "captainhook/captainhook": "^5.24",
+        "captainhook/hook-installer": "^1.0",
         "fakerphp/faker": "^1.23",
         "laradumps/laradumps": "^3.0",
+        "larastan/larastan": "^3.0",
         "laravel/pail": "^1.1",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.39",
@@ -70,6 +72,7 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "allow-plugins": {
+            "captainhook/hook-installer": true,
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
         }
