@@ -1,0 +1,19 @@
+<?php
+
+namespace {{ namespace }};
+
+{{ factoryImport }}
+use Illuminate\Database\Eloquent\Concerns\HasUlids;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Model;
+
+class {{ class }} extends Model
+{
+    {{ factory }}
+    use HasUlids;
+    use SoftDeletes;
+
+    protected $fillable = [
+        //
+    ];
+}
