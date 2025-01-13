@@ -17,24 +17,24 @@ Este projeto tem como objetivo criar um painel administrativo intuitivo, utiliza
 Clone este repositório para sua máquina local:
 
 ```bash
-git clone https://github.com/usuario/repositorio.git
-cd repositorio
+git clone https://github.com/NunesTec/fillament-app.git
+cd fillament-app
 ```
 
-###  2. Configuração do ambiente
+###  2. Instale as dependências
+Instale as dependências do Composer:
+
+```sh
+composer install
+```
+
+###  3. Configuração do ambiente
 Este projeto utiliza o Docker com o Laravel Sail para configurar o ambiente de desenvolvimento. Execute o comando abaixo para iniciar os containers:
 
 ```bash
 ./vendor/bin/sail up -d
 ```
 Isso iniciará os containers do Docker em segundo plano.
-
-###  3. Instale as dependências
-Depois que o Docker estiver rodando, instale as dependências do Composer:
-
-```sh
-./vendor/bin/sail composer install
-```
 
 ###  4. Configuração do ambiente
 Copie o arquivo de configuração .env.example para criar o seu próprio .env:
