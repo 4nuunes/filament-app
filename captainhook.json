@@ -13,7 +13,7 @@
                 "action": "./vendor/bin/phpstan analyse --memory-limit=2G"
             },
             {
-                "action": "./vendor/bin/sail a test"
+                "action": "./vendor/bin/pest --parallel"
             }
         ]
     },
