@@ -62,7 +62,12 @@ Agora, o aplicativo estará rodando dentro dos containers Docker. Você pode ace
 
 
 Copiar código
-http://localhost
+http://localhost/admin
+
+para acessar o painel administrativo crie um usuário para o seu sistema utilizando o comando abaixo
+```sh
+./vendor/bin/sail artisan make:filament-user
+```
 
 #### Pacotes Instalados
 Dependências principais:
