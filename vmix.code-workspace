@@ -1,0 +1,25 @@
+{
+    "folders": [
+        {
+            "path": "chatmix-api"
+        },
+        {
+            "path": "chatmix-app"
+        },
+        {
+            "path": "chatmix-widgets"
+        },
+        {
+            "path": "chatmix-services"
+        },
+        {
+            "path": "controller"
+        },
+        {
+            "path": "chatmix-app-v2"
+        },
+        {
+            "path": "chatmix-api-v2"
+        }
+    ]
+}
