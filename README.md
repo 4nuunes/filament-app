@@ -17,7 +17,7 @@ Este projeto tem como objetivo criar um painel administrativo intuitivo, utiliza
 Clone este repositório para sua máquina local:
 
 ```bash
-git clone https://github.com/NunesTec/fillament-app.git
+git clone https://github.com/4nuunes/fillament-app.git
 cd fillament-app
 ```
 
